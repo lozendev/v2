@@ -98,11 +98,13 @@ const VolumeX = (props) => (
 
 // --- App Code ---
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const SLIDES = [
-    { id: 'home', video: 'finaldesk.webm', navLabel: 'home' },
-    { id: 'about', video: 'FinalStand.webm', navLabel: 'about' },
-    { id: 'success', video: 'FinalBed.webm', navLabel: 'success' },
-    { id: 'sale', video: 'FinalStretch.webm', navLabel: 'sale' }
+    { id: 'home', video: `${BASE_URL}finaldesk.webm`, navLabel: 'home' },
+    { id: 'about', video: `${BASE_URL}FinalStand.webm`, navLabel: 'about' },
+    { id: 'success', video: `${BASE_URL}FinalBed.webm`, navLabel: 'success' },
+    { id: 'sale', video: `${BASE_URL}FinalStretch.webm`, navLabel: 'sale' }
 ];
 
 const SOCIALS = [
@@ -112,9 +114,9 @@ const SOCIALS = [
 ];
 
 const SUCCESS_PROJECTS = [
-    { name: 'Baby Shina Inu', img: 'bsi.png' },
-    { name: 'Baby Floki', img: 'bf.png' },
-    { name: 'WAGMI', img: 'wagmi.png' }
+    { name: 'Baby Shina Inu', img: `${BASE_URL}bsi.png` },
+    { name: 'Baby Floki', img: `${BASE_URL}bf.png` },
+    { name: 'WAGMI', img: `${BASE_URL}wagmi.png` }
 ];
 
 const LozenApp = () => {
@@ -225,7 +227,7 @@ const LozenApp = () => {
         <div
             className="relative w-screen h-screen overflow-hidden bg-black text-white selection:bg-[#f6dd9a] selection:text-black font-urbanist"
         >
-            <audio ref={audioRef} src="hs.mp3" loop />
+            <audio ref={audioRef} src={`${BASE_URL}hs.mp3`} loop />
 
             {/* Background Layer - WebGL */}
             <BackgroundScene currentSlide={currentSlide} slides={SLIDES} />
@@ -434,7 +436,7 @@ const LozenApp = () => {
                             <CloseIcon size={24} />
                         </button>
                         <div className="w-full h-full flex items-center justify-center bg-zinc-950">
-                            <img src="Latestproject.png" alt="Latest Project" className="max-w-full max-h-full object-contain" />
+                            <img src={`${BASE_URL}Latestproject.png`} alt="Latest Project" className="max-w-full max-h-full object-contain" />
                         </div>
                     </div>
                 </div>
